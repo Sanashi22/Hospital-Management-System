@@ -22,7 +22,10 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('doctor.urls', namespace='doctor'))
+    path('doctor',include('doctor.urls', namespace='doctor')),
+    path('',include('patient.urls', namespace='patient')),
+    path('accounts/',include('adminstrator.urls', namespace='adminstrator')),
+    
     
 ]
 if settings.DEBUG: 

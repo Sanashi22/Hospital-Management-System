@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     
     'doctor',
     'patient',
+    'adminstrator',
+    'django_bootstrap5'
 ]
 
 MIDDLEWARE = [
