@@ -4,6 +4,7 @@
 <h1>
     Doctor List
 </h1>
+<a href="{%url 'doctor:create-doctor' %}" class="btn btn-primary">CREATE</a>
 <hr>
 <div class='container'>
 <div class='row'>
@@ -13,8 +14,10 @@
             <img src="{{doctor.profile_picture.url}}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{doctor.name}}</h5>
-              <p class="card-text">{{doctor.speciality}}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <p class="card-text">{{doctor.specialty}}</p>
+              <p class="card-text">{{doctor.gender}}</p>
+              <a href="{%url 'doctor:doctor-delete' doctor.id%}" class="btn btn-danger">DELETE</a>
+              <a href="{%url 'doctor:doctor-update' doctor.id%}" class="btn btn-secondary">UPDATE</a>
             </div>
           </div>
     </div>

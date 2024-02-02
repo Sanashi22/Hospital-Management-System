@@ -1,4 +1,5 @@
 {%extends 'base.html'%}
+{%load static%}
 {%block content%}
 <!DOCTYPE html>
 <html lang="en">
@@ -6,47 +7,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>About Us</title>
-
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETSu1DkjljT9gI81KdGFCYnEIsD9vIfC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color:#17a2b8;
+            color: #495057;
+        }
+        .about-section {
+            padding: 50px 0;
+        }
+        .about-content {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .team-members {
+            margin-top: 30px;
+        }
+        .member-card {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Your Brand</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">About Us <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
+<div class="container about-section">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="about-content">
+                <h4>About Us</h4>
+                <p>NewGen Hospital is part of the adult health care delivery system of Stanford Medicine. Combining clinical care, research, and education to advance the understanding and practice of medicine, we provide compassionate, coordinated care personalized for the unique needs of every patient</p>
+                <p>We are proud to provide patients with the very best in diagnosis and treatment. And we are pioneering leading-edge therapies that will change the way health care is delivered tomorrow</p>
+                <p>In today’s rapidly evolving healthcare landscape, navigating through the digital realm of medical information can be overwhelming. At Patient Better, we are on a mission to empower individuals with the knowledge and skills to take charge of their health and make informed decisions. Through our innovative health consumer learning program, we’re revolutionizing patient-centered education, ensuring people have successful health experiences throughout the health journey and beyond.</p>
+
+                <h3>Our Expertise</h3>
+                <div class="team-members">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card member-card">
+                                <img src="{%static 'images/photo5.png'%}" class="card-img-top" alt="Team Member 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Internal Medicine</h5>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card member-card">
+                                <img src="{%static 'images/photo6.png'%}" class="card-img-top" alt="Team Member 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cardiology</h5>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card member-card">
+                                <img src="{%static 'images/photo7.png'%}" class="card-img-top" alt="Team Member 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dermatology</h5>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Connect with Us</h3>
+                <ul>
+                    <li><a href="#" target="_blank">Facebook</a></li>
+                    <li><a href="#" target="_blank">Twitter</a></li>
+                    <li><a href="#" target="_blank">LinkedIn</a></li>
+                    <li><a href="#" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
         </div>
-    </nav>
-
-    <!-- About Us Content -->
-    <div class="container mt-4">
-        <h2>About Us</h2>
-        <p>NewGen Hospital is part of the adult health care delivery system of Stanford Medicine. Combining clinical care, research, and education to advance the understanding and practice of medicine, we provide compassionate, coordinated care personalized for the unique needs of every patient.</p>
-        <p>We are proud to provide patients with the very best in diagnosis and treatment. And we are pioneering leading-edge therapies that will change the way health care is delivered tomorrow..</p>
     </div>
+</div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-d2bFz8r4u3bpaVMze1aXoGz7PWWuHwa2r3uqL4x/VnU8sOGPfWek4CFAOHSzRn/a" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETSu1DkjljT9gI81KdGFCYnEIsD9vIfC" crossorigin="anonymous"></script>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>
 

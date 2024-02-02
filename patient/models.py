@@ -9,7 +9,7 @@ GENDER= (
 class Patient(models.Model):
     name=models.CharField(max_length=100)
     age=models.IntegerField ()
-    diagnnosis=models.TextField()
+    diagnosis=models.TextField()
     email= models.CharField(max_length=100)
     gender= models.CharField(max_length=10, choices=GENDER)
     

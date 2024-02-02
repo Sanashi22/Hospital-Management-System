@@ -1,34 +1,108 @@
 {%extends 'base.html'%}
-
+{%load static%}
 {%block content%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Your Homepage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>NewGen Hospital</title>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETSu1DkjljT9gI81KdGFCYnEIsD9vIfC" crossorigin="anonymous">
+    .header {
+      background-color: #17a2b8;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .jumbotron {
+      background-color: #17a2b8;
+      color: #fff;
+      padding: 50px;
+      margin-top: 30px;
+    }
+
+    .features {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      color: #17a2b8;
+    }
+
+    .feature-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .feature-description {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .feature-image {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .footer {
+      background-color: #17a2b8;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Main Content with Picture -->
-    <div class="container mt-4">
-        <div class="jumbotron">
-            <h1 class="display-4">NewGen Hospital</h1>
-            <p class="lead">The power of community to create health is far greater than any physician, clinic or hospital.</p>
-            <hr class="my-4">
-            <img src="https://via.placeholder.com/600x300" class="img-fluid" alt="Example Image">
-        </div>
+  <div class="header">
+    <div class="container">
+      <h1>NewGen Hospital</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h2>Welcome to NewGen Hospital</h2>
+      <p>Efficiently manage patient records, appointments, and more.</p>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-d2bFz8r4u3bpaVMze1aXoGz7PWWuHwa2r3uqL4x/VnU8sOGPfWek4CFAOHSzRn/a" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETSu1DkjljT9gI81KdGFCYnEIsD9vIfC" crossorigin="anonymous"></script>
-</body>
-</html>
+    <div class="row features">
+      <div class="col-md-4">
+        <i class="fas fa-user-md feature-icon"></i>
+        <h3 class="feature-title">Expert Doctors</h3>
+        <p class="feature-description">Expert doctors are highly seasoned and skilled medical professionals who bring a wealth of knowledge and experience to the forefront of patient care. These individuals have traversed a comprehensive and rigorous educational journey, culminating in the completion of medical school and subsequent residency training. Many of them have chosen to further refine their expertise by pursuing specialized fellowship training, delving deep into specific branches of medicine.</p>
+        <img src="{%static 'images/photo3.png'%}" alt="Doctor" class="feature-image">
+      </div>
+      <div class="col-md-4">
+        <i class="fas fa-calendar-check feature-icon"></i>
+        <h3 class="feature-title">New Year, Better Health</h3>
+        <p class="feature-description">Start your journey to a happier, healthier life with wellness coaching, fitness deals, and self-care resources.Take charge of your well-being and make positive strides towards a more vibrant and balanced lifestyle. </p>
+        <img src="{%static 'images/photo2doc.png'%}" alt="Appointment" class="feature-image">
+      </div>
+      <div class="col-md-4">
+        <i class="fas fa-hospital feature-icon"></i>
+        <h3 class="feature-title">Care for the whole you</h3>
+        <p class="feature-description"> Nurturing mind, body, and spirit, our comprehensive approach ensures a holistic care experience for both individuals and their communities. Invest in your overall health and contribute to the well-being of your community by exploring our resources aimed at supporting every facet of your well-being journey.</p>
+        <img src="{%static 'images/photo4.png'%}" alt="Facility" class="feature-image">
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 NewGen. All rights reserved.</p>
+  </div>
+
+  <script src="https://code.
+
 
 
 {%endblock%}

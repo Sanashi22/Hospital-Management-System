@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<h1>
+    Patient List
+</h1>
+<a href="{%url 'patient:create-patient' %}" class="btn btn-primary">CREATE</a>
+<hr>
+<div class='container'>
+<div class='row'>
+    {%for patient in patients%}
+    <div class='col-md-4'>
+        <div class="card" style="width: 18rem;">
+           
+            <div class="card-body">
+              <h5 class="card-title">{{patient.name}}</h5>
+              <p class="card-text">{{patient.age}}</p>
+              <p class="card-text">{{patient.diagnosis}}</p>
+              <p class="card-text">{{patient.gender}}</p>
+              <p class="card-text">{{patient.email}}</p>
+              <a href="{%url 'patient:patient-delete' patient.id%}" class="btn btn-danger">DELETE</a>
+              <a href="{%url 'patient:patient-update' patient.id%}" class="btn btn-secondary">UPDATE</a>
+            </div>
+          </div>
+    </div>
+    {%endfor%}
+</div>
+</div>
+
+
+
+{%endblock%}
