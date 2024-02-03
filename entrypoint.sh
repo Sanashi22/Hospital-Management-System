@@ -1,4 +1,5 @@
-#!/bin/sh
-echo "Apply Database Migration"
-python manage.py migrate --no-input
-python manage.py collectstatic --no-input
+#!/bin/ash
+echo "Applying Database Migration"
+python manage.py migrate
+exec "$@"
+# python manage.py collectstatic --no-input
