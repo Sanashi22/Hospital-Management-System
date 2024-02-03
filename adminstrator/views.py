@@ -3,6 +3,7 @@ from .forms import LoginForm, Signupform, Appointmentform
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import Appointment
+from .forms import Appointmentcreateupdateform
 
 
 
@@ -55,4 +56,34 @@ def logout_user(request):
     return redirect('/')
 
 
+def create_appointment(request):
+    if request.method=='POST':
+        form=Appointmentcreateupdateform(request.POST,files=request.FILES)
+        if form.is_valid():
+            form.save()
+
+            return redirect('/')
+    
+    form= Appointmentcreateupdateform()
+    return render(request,'add-appointment.html',{'form':form, 'title':'Add'})
+
+def appointment_list(request):
+    appointment=Appointment.objects.all()
+    return render(request,'appointmentlist.html',{'appointments':appointment})
+    
+def appointment_delete(request,id):
+    Appointment.objects.get(id=id).delete()
+    return redirect('administrator:appointment-list')
+
+def update_appointment(request,id):
+    appointment=Appointment.objects.get(id=id)
+    if request.method=='POST':
+        form=Appointmentcreateupdateform(request.POST,instance=appointment)
+        if form.is_valid():
+           form.save()
+
+           return redirect('adminstrator:appointment-list')
+   
+    form= Appointmentcreateupdateform(instance=appointment)
+    return render(request,'add-appointment.html',{'form':form, 'title':'Update'})
 

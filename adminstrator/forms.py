@@ -20,3 +20,9 @@ class Appointmentform(forms.ModelForm):
         widgets={
         'appointment_date':forms.TextInput(attrs={'type':'datetime-local'})
         }
+
+
+class Appointmentcreateupdateform(forms.ModelForm):
+    class Meta:
+        model=Appointment
+        fields="__all__"

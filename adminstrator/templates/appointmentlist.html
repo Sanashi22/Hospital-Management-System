@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<h1>
+    Appointment List
+</h1>
+<a href="{%url 'adminstrator:create-appointment' %}" class="btn btn-primary">CREATE</a>
+<hr>
+<div class='container'>
+<div class='row'>
+    {%for appointment in appointments%}
+    <div class='col-md-4'>
+        <div class="card" style="width: 18rem;">
+           
+            <div class="card-body">
+              <h5 class="card-title">{{appointment.doctor.name}}</h5>
+              <p class="card-text">{{appointment.patient.name}}</p>
+              <p class="card-text">{{appointment.appointment_date}}</p>
+              <p class="card-text">{{appointment.comment}}</p>
+              <a href="{%url 'adminstrator:appointment-delete' appointment.id%}" class="btn btn-danger">DELETE</a>
+              <a href="{%url 'adminstrator:appointment-update' appointment.id%}" class="btn btn-secondary">UPDATE</a>
+            </div>
+          </div>
+    </div>
+    {%endfor%}
+</div>
+</div>
+
+
+
+{%endblock%}
