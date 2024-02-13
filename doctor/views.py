@@ -18,7 +18,7 @@ def create_doctor(request):
         if form.is_valid():
             form.save()
 
-            return redirect('/')
+            return redirect('doctor:doctor-list')
     
     form=Doctorcreateupdateform()
     return render(request,'add-doctor.html',{'form':form})

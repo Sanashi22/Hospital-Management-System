@@ -59,10 +59,12 @@ def logout_user(request):
 def create_appointment(request):
     if request.method=='POST':
         form=Appointmentcreateupdateform(request.POST,files=request.FILES)
+        # print(request.POST)
+        # print(form.is_valid())
         if form.is_valid():
             form.save()
 
-            return redirect('/')
+            return redirect('adminstrator:appointment-list')
     
     form= Appointmentcreateupdateform()
     return render(request,'add-appointment.html',{'form':form, 'title':'Add'})

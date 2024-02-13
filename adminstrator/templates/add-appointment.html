@@ -7,7 +7,35 @@
 <form method="post" enctype="multipart/form-data">
 
     {%csrf_token%}
-    {% bootstrap_form form %}
+    {% comment %} {% bootstrap_form form %} {% endcomment %}
+    <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Doctor</label>
+    <select class="form-control" id="exampleFormControlInput1" placeholder="doctor" name="doctor">
+        {%for doctor in form.doctor.field.queryset%}
+        <option value="{{doctor.id}}" name="doctor">{{doctor.name}} </option>
+
+        {%endfor%}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Patient</label>
+    <select class="form-control" id="exampleFormControlInput1" placeholder="patient" name="patient">
+        {%for patient in form.patient.field.queryset%}
+        <option value="{{patient.id}}" name="patient">{{patient.name}} </option>
+
+        {%endfor%}
+    </select>
+  </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Appointment date</label>
+        <input type="datetime-local" name="appointment_date" class="form-control" id="exampleFormControlInput1" placeholder="appointment" value="{{form.appointment_date.value}}">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
+        <textarea class="form-control" value="{{form.comment.value}}" name="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+
+    
     
     <input value="{{title}} Appointment" type="submit" class="btn btn-primary">
     </form>
